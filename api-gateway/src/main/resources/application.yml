@@ -1,0 +1,21 @@
+server:
+  port: 8080
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka
+  instance:
+    lease-renewal-interval-in-seconds: 3
+    instance-id: ${spring.application.name}:${random.int}
+
+spring:
+  application:
+    name: api-gateway
+
+  cloud:
+    config:
+      fail-fast: true
+
+
+
