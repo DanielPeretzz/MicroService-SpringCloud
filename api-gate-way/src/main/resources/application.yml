@@ -1,13 +1,12 @@
-
 spring:
   application:
     name: api-gate-way
   cloud:
     gateway:
       routes[0]:
-        id: messaging-server
-        uri: lb://messaging-server
-        predicates[0]: Path=/api/message
+        id: app-service
+        uri: lb://app-service
+        predicates[0]: Path=/api/service
 server:
   port: 8080
 
@@ -16,12 +15,10 @@ eureka:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka
   instance:
-    lease-renewal-interval-in-seconds: 3
+    lease-renewal-interval-in-seconds: 1
     instance-id: ${spring.application.name}:${random.int}
 
 logging:
   level:
     root: info
     com.danielperetz: debug
-
-
