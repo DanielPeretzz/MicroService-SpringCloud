@@ -22,7 +22,12 @@ public class AppService {
         final ResponseEntity<String> responseEntity = restTemplate
                 .postForEntity("http://messaging-server/api/message",
                         message, String.class);
+    }
 
-            log.info("Received: " + responseEntity.getBody());
+    public void getConsumer(){
+        final ResponseEntity<String> responseEntity = restTemplate
+                .getForEntity("http://messaging-server/api/consume", String.class);
+
+        log.info("Listener received: " + responseEntity.getBody());
     }
 }

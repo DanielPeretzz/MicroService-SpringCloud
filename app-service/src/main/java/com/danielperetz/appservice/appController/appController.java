@@ -18,6 +18,7 @@ public class appController {
     @PostMapping
     public String service(@RequestBody Message message){
         appService.sendProduce(message);
+        appService.getConsumer();
         return "Success!";
     }
 }
