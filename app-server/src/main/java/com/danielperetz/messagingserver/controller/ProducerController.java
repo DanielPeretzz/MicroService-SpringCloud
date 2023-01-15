@@ -1,8 +1,6 @@
 package com.danielperetz.messagingserver.controller;
 
 
-
-
 import com.danielperetz.messagingserver.MessageRequest;
 
 import lombok.RequiredArgsConstructor;
@@ -14,19 +12,18 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("api/message")
+@RequestMapping("api/v1/message")
 @RequiredArgsConstructor
 @Slf4j
 public class ProducerController {
-    private final KafkaTemplate<String,String> kafkaTemplate;
+    private final KafkaTemplate<String, String> kafkaTemplate;
 
     @PostMapping
-    public void publish(@RequestBody MessageRequest request){
-         kafkaTemplate.send("kafkatopic", request.getMessage());
-         log.info("Produce Received: " + request.getMessage());
-
+    public String publish(@RequestBody MessageRequest request) {
+        kafkaTemplate.send("kafkatopic", request.getMessage());
+        log.info("Produce Received: " + request.getMessage());
+        return "Success!!!";
     }
-
 
 
 }

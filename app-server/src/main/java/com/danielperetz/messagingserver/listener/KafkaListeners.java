@@ -13,14 +13,12 @@ import org.springframework.web.client.RestTemplate;
 @Slf4j
 public class KafkaListeners {
 
-    public static String consumeMessage;
 
-    @KafkaListener(topics = "kafkatopic",groupId = "groupId")
-    void listener(String data){
-        log.info("Listener received: " + data );
-        consumeMessage = data;
+    @KafkaListener(topics = "kafkatopic", groupId = "groupId")
+    void listener(String data) {
+        log.info("Listener received: " + data);
+
     }
-
 
 
 }
