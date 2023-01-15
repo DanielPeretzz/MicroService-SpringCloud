@@ -7,9 +7,11 @@ Kafka server :
 .\bin\windows\zookeeper-server-start.bat config\zookeeper.properties
 
 # Start the Kafka broker service
+
 .\bin\windows\kafka-server-start.bat .\config\server.properties
 
 READ THE EVENTS (topic name = kafkatopic):
+
 bin/kafka-console-consumer.bat --topic kafkatopic --from-beginning --bootstrap-server localhost:9092
 
 
@@ -19,3 +21,5 @@ JSON Example:
 {  
     "message": "Hello from Kafka!!!"
 }
+
+
