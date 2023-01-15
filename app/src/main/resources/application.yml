@@ -1,0 +1,23 @@
+server:
+  port: 0
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka
+  instance:
+    lease-renewal-interval-in-seconds: 1
+    instance-id: ${spring.application.name}:${random.int}
+
+spring:
+  kafka:
+    bootstrap-servers: localhost:9092
+  application:
+    name: app
+
+  cloud:
+    config:
+      fail-fast: true
+
+
+
