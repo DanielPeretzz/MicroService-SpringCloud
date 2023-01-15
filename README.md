@@ -10,7 +10,7 @@ Kafka server :
 
 .\bin\windows\kafka-server-start.bat .\config\server.properties
 
-READ THE EVENTS (topic name = kafkatopic):
+# READ THE EVENTS (topic name = kafkatopic):
 
 bin/kafka-console-consumer.bat --topic kafkatopic --from-beginning --bootstrap-server localhost:9092
 
