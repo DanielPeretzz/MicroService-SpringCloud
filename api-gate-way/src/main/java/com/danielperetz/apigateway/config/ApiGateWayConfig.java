@@ -12,7 +12,7 @@ public class ApiGateWayConfig {
         return builder.routes()
                 .route(p -> p
                         .path("/post")
-                        .uri("http://messaging-server/api/v1/message")
+                        .uri("http://app/api/v1/message")
                 ).build();
     }
 }

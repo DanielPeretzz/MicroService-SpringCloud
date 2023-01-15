@@ -4,8 +4,8 @@ spring:
   cloud:
     gateway:
       routes[0]:
-        id: app-server
-        uri: lb://app-server
+        id: app
+        uri: lb://app
         predicates[0]: Path=/api/v1/message
 server:
   port: 8080
