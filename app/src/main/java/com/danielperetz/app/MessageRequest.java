@@ -9,5 +9,4 @@ import lombok.*;
 @Builder
 public class MessageRequest {
     private String message;
-
 }
