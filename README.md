@@ -15,9 +15,10 @@ Kafka server :
 bin/kafka-console-consumer.bat --topic kafkatopic --from-beginning --bootstrap-server localhost:9092
 
 
-API = http://localhost:8080/api/v1/message (POST)
+# API :
+http://localhost:8080/api/v1/message (POST)
 
-JSON Example:
+# JSON Example:
 {  
 
     "message": "Hello from Kafka!!!"
